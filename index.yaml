@@ -3,12 +3,12 @@ entries:
   maven-hello-world:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-12-07T13:23:48.821561-05:00"
+    created: "2020-12-07T14:25:57.107383-05:00"
     description: Maven-Hello-World K8s deployment chart.
-    digest: e34af0425587795592c9ef599c7292713c1c3ecd54a0ac4d2bf3bfe37ba424df
+    digest: 3330adb45d2ccf31963e460eb3ace96eab775d11c2dad2bf9a984fc612d3f836
     name: maven-hello-world
     type: application
     urls:
     - https://janpreet.github.io/helm-charts/maven-hello-world-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-07T13:23:48.820822-05:00"
+generated: "2020-12-07T14:25:57.105643-05:00"
