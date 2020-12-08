@@ -1,14 +1,20 @@
-# Default values for maven-hello-world.
+# Default values for kibana.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 3
+replicaCount: 1
 
 image:
-  repository: janpreet/maven-hello-world
-  pullPolicy: Always
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  repository: "docker.elastic.co/kibana/kibana-oss"
+  tag: "6.4.2"
+env:
+  # All Kibana configuration options are adjustable via env vars.
+  # To adjust a config option to an env var uppercase + replace `.` with `_`
+  # Ref: https://www.elastic.co/guide/en/kibana/current/settings.html
+  #
+  SERVER_PORT: 5601
+  LOGGING_VERBOSE: "true"
+  SERVER_DEFAULTROUTE: "/app/kibana"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -36,42 +42,9 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-## Allow health checks to be pointed at the https port
-healthcheckHttps: false
-
-## Readiness probe type
-readineesProbeType: tcp
-
-## WordPress pod extra options for liveness and readiness probes
-## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
-livenessProbe:
-  enabled: false
-  initialDelaySeconds: 120
-  path: /actuator/health
-readinessProbe:
-  enabled: false
-  initialDelaySeconds: 30
-  path:
-  tcpPort: 8080 
-
-## If using an HTTPS-terminating load-balancer, the probes may need to behave
-## like the balancer to prevent HTTP 302 responses. According to the Kubernetes
-## docs, 302 should be considered "successful", but this issue on GitHub
-## (https://github.com/kubernetes/kubernetes/issues/47893) shows that it isn't.
-##
-# livenessProbeHeaders:
-# - name: X-Forwarded-Proto
-#   value: https
-# readinessProbeHeaders:
-# - name: X-Forwarded-Proto
-#   value: https
-livenessProbeHeaders: {}
-readinessProbeHeaders: {}
-
 service:
-  type: LoadBalancer
-  port: 8080
-  targetPort: 8080
+  type: ClusterIP
+  port: 80
 
 ingress:
   enabled: false
@@ -99,8 +72,8 @@ resources: {}
   #   memory: 128Mi
 
 autoscaling:
-  enabled: true
-  minReplicas: 2
+  enabled: false
+  minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
@@ -110,3 +83,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+livenessProbe:
+  enabled: false
+readinessProbe:
+  enabled: false

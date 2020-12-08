@@ -1,14 +1,25 @@
 apiVersion: v1
 entries:
+  kibana:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-12-07T19:52:02.178964-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 1cc1f9b5589c1ba03e1283c4a091d0095a1c6d2d4aa59710f09210b431181ad9
+    name: kibana
+    type: application
+    urls:
+    - https://janpreet.github.io/helm-charts/kibana-0.1.0.tgz
+    version: 0.1.0
   maven-hello-world:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-12-07T14:43:28.653718-05:00"
+    created: "2020-12-07T19:52:02.179452-05:00"
     description: Maven-Hello-World K8s deployment chart.
-    digest: cc5d0e5b324f540db64491276710e25c2b8a467e0b77a36d5376fc9a43c22e20
+    digest: 2b00ae998e4d58870fea6d009fb1e9db63f072b8aa326118fb50637eb35bd6ea
     name: maven-hello-world
     type: application
     urls:
     - https://janpreet.github.io/helm-charts/maven-hello-world-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-07T14:43:28.653076-05:00"
+generated: "2020-12-07T19:52:02.177649-05:00"
