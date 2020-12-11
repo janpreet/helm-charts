@@ -1,6 +1,6 @@
 apiVersion: v2
 name: bare-bones
-description: Bare-bones chart for deploying resources. helm install release-name  -f values.yaml janpreet/bare-bones 
+description: Bare-bones chart for deploying resources. Values.yaml should define your config. 
 
 # A chart can be either an 'application' or a 'library' chart.
 #

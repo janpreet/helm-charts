@@ -3,10 +3,10 @@ entries:
   bare-bones:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-12-11T17:04:11.392433-05:00"
-    description: Bare-bones chart for deploying resources. helm install release-name  -f
-      values.yaml janpreet/bare-bones
-    digest: d5b50b86bfc3bc975d044f4ee7a21942eacc7e0e8527ea6cc0ed06ac4fa8963b
+    created: "2020-12-11T17:13:04.002983-05:00"
+    description: Bare-bones chart for deploying resources. Values.yaml should define
+      your config.
+    digest: 186486b00c3a257633cc8d2b447c981103e9afc48dfca42cb87a6660118ae9f4
     name: bare-bones
     type: application
     urls:
@@ -15,7 +15,7 @@ entries:
   kibana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-12-11T17:04:11.392866-05:00"
+    created: "2020-12-11T17:13:04.003829-05:00"
     description: A Helm chart for installing Kibana.
     digest: d86a93a93fa91d29abbc8faf33027411427669bb9eb26297d77945f8d694114a
     name: kibana
@@ -26,7 +26,7 @@ entries:
   maven-hello-world:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-12-11T17:04:11.393319-05:00"
+    created: "2020-12-11T17:13:04.005345-05:00"
     description: Maven-Hello-World K8s deployment chart.
     digest: 81a3e0bf776038ce7e04cce59f667e8c64f81e02041f29eec47899d3aa4480cf
     name: maven-hello-world
@@ -34,4 +34,4 @@ entries:
     urls:
     - https://janpreet.github.io/helm-charts/maven-hello-world-0.1.0.tgz
     version: 0.1.0
-generated: "2020-12-11T17:04:11.391836-05:00"
+generated: "2020-12-11T17:13:04.002385-05:00"
